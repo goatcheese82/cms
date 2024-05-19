@@ -6,7 +6,9 @@
   <title>Document</title>
 </head>
 <body>
-<header><cms-header></cms-header></header>
-<cms-contacts></cms-contacts>
+<header><cms-header (featureSelected)="onNavigate($event)"></cms-header></header>
+<cms-documents *ngIf="loadedFeature === 'documents'"></cms-documents>
+<cms-message-list *ngIf="loadedFeature === 'messages'"></cms-message-list>
+<cms-contacts *ngIf="loadedFeature === 'contacts'"></cms-contacts>
 </body>
 </html>
